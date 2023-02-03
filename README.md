@@ -29,9 +29,15 @@ sudo ufw allow 8080
 sudo ufw enable
 
 #Once done, test whether the firewall is active using this command:
+
 sudo ufw status
 
 #With the firewall configured, it’s time to set up Jenkins itself. Type in the IP of your EC2 along with the port number. The Jenkins setup wizard will open.
+
+note 
+If it doesn't work check EC2 instance inbound rules Network inbound rules and add as below:   
+add http 8080  port rule
+
 
 #To check the initial password, use the cat command as indicated below:
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
